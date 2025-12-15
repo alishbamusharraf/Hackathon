@@ -1,0 +1,24 @@
+{
+  "id": "intro",
+  "title": "Introduction",
+  "description": "This book introduces you to the core concepts of modern robotics and AI systems.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/LAIBAMUSHARAF45/Hackathon-book/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Introduction"
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Chapter 1: Core ROS 2 Concepts",
+    "permalink": "/docs/module-1/chapter-1-core-concepts"
+  }
+}

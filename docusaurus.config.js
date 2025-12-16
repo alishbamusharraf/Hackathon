@@ -36,7 +36,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/LAIBAMUSHARAF45/Hackathon-book',
+            'https://github.com/alishbamusharraf/Hackathon-',
         },
         blog: false, // Optional: disable the blog plugin
         theme: {
@@ -60,7 +60,7 @@ const config = {
             label: 'Book',
           },
           {
-            href: 'https://github.com/LAIBAMUSHARAF45/Hackathon-book', // Replace with project repo
+            href: 'https://github.com/alishbamusharraf/Hackathon-', // Replace with project repo
             label: 'GitHub',
             position: 'right',
           },
@@ -96,7 +96,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/LAIBAMUSHARAF45/Hackathon-book', // Replace with project repo
+                href: 'https://github.com/alishbamusharraf/Hackathon-', // Replace with project repo
               },
             ],
           },

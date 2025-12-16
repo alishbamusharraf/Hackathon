@@ -24,7 +24,7 @@ export default {
       {
         "docs": {
           "sidebarPath": "C:\\Hackathon-book-main\\docs\\sidebar.js",
-          "editUrl": "https://github.com/LAIBAMUSHARAF45/Hackathon-book"
+          "editUrl": "https://github.com/alishbamusharraf/Hackathon-"
         },
         "blog": false,
         "theme": {
@@ -44,7 +44,7 @@ export default {
           "label": "Book"
         },
         {
-          "href": "https://github.com/LAIBAMUSHARAF45/Hackathon-book",
+          "href": "https://github.com/alishbamusharraf/Hackathon-",
           "label": "GitHub",
           "position": "right"
         }
@@ -81,7 +81,7 @@ export default {
           "items": [
             {
               "label": "GitHub",
-              "href": "https://github.com/LAIBAMUSHARAF45/Hackathon-book"
+              "href": "https://github.com/alishbamusharraf/Hackathon-"
             }
           ]
         }

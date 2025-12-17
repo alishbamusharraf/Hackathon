@@ -133,7 +133,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://github.com/LAIBAMUSHARAF45/Hackathon-book"
+            href="https://github.com/alishbamusharraf/Hackathon"
             target="_blank"
             style={{
               padding: '16px 32px',

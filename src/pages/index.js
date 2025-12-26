@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import lottie from 'lottie-web';
-import robotData from '../assets/robot.json'; // apni robot JSON
+import robotData from '../assets/robot.json';
 
 export default function Home() {
   useEffect(() => {
@@ -21,129 +22,217 @@ export default function Home() {
       title="Physical AI & Humanoid Robotics"
       description="Learn ROS 2, NVIDIA Isaac, Digital Twins & Vision-Language-Action systems"
     >
-      <main style={{ fontFamily: "'Inter', sans-serif", minHeight: '100vh', overflowX: 'hidden' }}>
-        
+      <main style={{ fontFamily: "'Inter', sans-serif", overflowX: 'hidden' }}>
+
         {/* HERO SECTION */}
         <section style={{
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between', 
-          padding: '100px 10%', 
-          gap: '50px',
-          position: 'relative',
-          background: 'linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)',
-          overflow: 'hidden'
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '100px 10%',
+          gap: '60px',
+          background: 'radial-gradient(circle at top right, #0f172a, #1e293b)'
         }}>
-          
-          {/* LEFT: Heading + Text + Buttons */}
-          <div style={{ flex: 1, textAlign: 'left', position: 'relative', zIndex: 1 }}>
-            <h1 style={{ fontSize: '3.5rem', fontWeight: '900', marginBottom: '20px', background: 'linear-gradient(90deg, #7c3aed, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+          {/* LEFT */}
+          <div style={{ flex: 1 }}>
+            <h1 style={{
+              fontSize: '3.6rem',
+              fontWeight: 900,
+              marginBottom: '24px',
+              background: 'linear-gradient(90deg, #06b6d4, #3b82f6)',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent'
+            }}>
               Physical AI & <br /> Humanoid Robotics
             </h1>
-            <p style={{ fontSize: '1.25rem', color: '#5b21b6', marginBottom: '40px', maxWidth: '500px' }}>
-              Step-by-step labs and examples covering ROS 2, NVIDIA Isaac, digital twins, and Vision-Language-Action systems.
+
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#cbd5e1',
+              marginBottom: '40px',
+              maxWidth: '520px',
+              lineHeight: 1.7
+            }}>
+              Learn how intelligent humanoid robots perceive, reason, and act
+              in the physical world using modern AI systems.
             </p>
 
-            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-              <button className="primary-btn">📘 Read Book</button>
-              <button className="secondary-btn">🚀 Start Learning</button>
+            <div style={{ display: 'flex', gap: '20px' }}>
+              <Link to="/docs/intro" className="primary-btn">📘 Read Book</Link>
+              <Link to="/docs/getting-started" className="secondary-btn">🚀 Start Learning</Link>
             </div>
           </div>
 
-          {/* RIGHT: Lottie Robot */}
-          <div style={{ flex: 1, textAlign: 'center', position: 'relative', zIndex: 1 }}>
-            <div id="robot-animation" style={{ width: '400px', height: '400px', margin: '0 auto' }} />
+          {/* RIGHT */}
+          <div style={{ flex: 1, textAlign: 'center' }}>
+            <div
+              id="robot-animation"
+              style={{
+                width: '420px',
+                height: '420px',
+                margin: '0 auto',
+                filter: 'drop-shadow(0 25px 45px rgba(3,105,161,0.45))'
+              }}
+            />
           </div>
         </section>
 
-        {/* WHAT YOU LEARN SECTION */}
-        <section style={{ padding: '80px 10%', textAlign: 'center', background: '#f3e8ff' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '50px', color: '#7c3aed' }}>What You'll Learn</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
-            <FeatureCard title="🤖 Humanoid Robots" description="Design and control lifelike humanoid robots." />
-            <FeatureCard title="🧠 Physical AI" description="Intelligent agents interacting with the real world." />
-            <FeatureCard title="⚙️ ROS 2" description="Robot Operating System for modern robotics." />
-            <FeatureCard title="🦾 Sensors & Actuators" description="Integrate sensors for perception and control." />
+        {/* WHAT YOU'LL LEARN – ZIG ZAG */}
+        <section style={{ padding: '100px 10%', background: '#0f172a' }}>
+          <h2 style={{
+            fontSize: '2.7rem',
+            fontWeight: 800,
+            marginBottom: '70px',
+            textAlign: 'center',
+            color: '#06b6d4'
+          }}>
+            What You'll Learn
+          </h2>
+
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <ZigCard
+              align="left"
+              title="🤖 Humanoid Robots"
+              text="Build and control realistic humanoid robots with motion, balance, and intelligence."
+            />
+            <ZigCard
+              align="right"
+              title="🧠 Physical AI"
+              text="Create AI systems that sense, reason, and act in the real physical environment."
+            />
+            <ZigCard
+              align="left"
+              title="⚙️ ROS 2"
+              text="Master the industry-standard robotics middleware used in real robots."
+            />
+            <ZigCard
+              align="right"
+              title="🦾 Sensors & Control"
+              text="Understand perception pipelines, sensors, actuators, and control systems."
+            />
           </div>
         </section>
 
-        {/* EXTRA SECTION */}
-        <section style={{ padding: '80px 10%', textAlign: 'center', background: '#ede9fe' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '30px', color: '#7c3aed' }}>Robotics in Action</h2>
-          <p style={{ fontSize: '1.2rem', color: '#5b21b6', marginBottom: '40px' }}>
-            Explore simulations and interactive examples to see humanoid robotics in real-world scenarios.
-          </p>
-          <button className="primary-btn">Try Simulation</button>
+        {/* ROBOTICS INFO */}
+        <section style={{ padding: '100px 10%', background: '#1e293b' }}>
+          <div style={{
+            maxWidth: '1000px',
+            margin: '0 auto',
+            background: '#0f172a',
+            padding: '60px',
+            borderRadius: '28px',
+            boxShadow: '0 15px 40px rgba(3,105,161,0.3)',
+            textAlign: 'center',
+            transition: '0.3s'
+          }}
+            className="robotics-info-box"
+          >
+            <h2 style={{
+              fontSize: '2.5rem',
+              marginBottom: '28px',
+              color: '#06b6d4',
+              fontWeight: 700
+            }}>
+              🤖 Robotics Beyond Theory
+            </h2>
+
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#cbd5e1',
+              lineHeight: 1.8,
+              maxWidth: '850px',
+              margin: '0 auto'
+            }}>
+              Dive deeper into real humanoid intelligence — blending perception,
+              AI reasoning, and physical interaction. This section highlights
+              practical robotics applications, giving you insights into how
+              advanced robots see, think, and act in real environments.
+            </p>
+          </div>
+
+          <style>{`
+            .robotics-info-box:hover {
+              transform: translateY(-6px) scale(1.02);
+              box-shadow: 0 25px 60px rgba(3,105,161,0.4);
+            }
+          `}</style>
         </section>
 
-        {/* GLOBAL STYLES */}
+        {/* BUTTON STYLES */}
         <style>{`
           .primary-btn {
-            padding: 16px 32px;
-            border-radius: 12px;
+            padding: 16px 34px;
+            border-radius: 14px;
             font-size: 1.1rem;
             font-weight: 600;
-            cursor: pointer;
-            background-color: #7c3aed;
+            background: #06b6d4;
             color: white;
-            border: none;
-            transition: all 0.3s ease;
+            text-decoration: none;
+            transition: 0.35s;
           }
-          .primary-btn:hover { transform: scale(1.07); box-shadow: 0 8px 24px rgba(124,58,237,0.35); }
+          .primary-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(3,105,161,0.45);
+          }
 
           .secondary-btn {
-            padding: 16px 32px;
-            border-radius: 12px;
+            padding: 16px 34px;
+            border-radius: 14px;
             font-size: 1.1rem;
             font-weight: 600;
-            cursor: pointer;
-            background-color: transparent;
-            color: #7c3aed;
-            border: 2px solid #7c3aed;
-            transition: all 0.3s ease;
+            border: 2px solid #06b6d4;
+            color: #06b6d4;
+            text-decoration: none;
+            transition: 0.35s;
           }
-          .secondary-btn:hover { background-color: #ede9fe; transform: scale(1.07); border-color: #9333ea; }
+          .secondary-btn:hover {
+            background: #0f172a;
+            color: #06b6d4;
+            transform: translateY(-4px) scale(1.05);
+          }
         `}</style>
       </main>
     </Layout>
   );
 }
 
-function FeatureCard({ title, description }) {
+/* ZIG ZAG CARD */
+function ZigCard({ align, title, text }) {
   return (
     <div
       style={{
-        padding: '25px',
-        borderRadius: '12px',
-        backgroundColor: '#faf5ff',
-        fontWeight: '600',
-        fontSize: '1.1rem',
-        textAlign: 'center',
-        boxShadow: '0 6px 18px rgba(124,58,237,0.15)',
-        transition: 'all 0.3s ease',
-        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: align === 'left' ? 'flex-start' : 'flex-end',
+        marginBottom: '55px',
       }}
-      onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.boxShadow = '0 12px 25px rgba(124,58,237,0.25)'; }}
-      onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 18px rgba(124,58,237,0.15)'; }}
     >
-      <h3 style={{ fontSize: '1.4rem', marginBottom: '12px', color: '#7c3aed' }}>{title}</h3>
-      <p style={{ fontSize: '1rem', color: '#5b21b6', marginBottom: '15px' }}>{description}</p>
-      <button
+      <div
+        className="zig-card"
         style={{
-          padding: '8px 20px',
-          borderRadius: '10px',
-          border: 'none',
-          backgroundColor: '#9333ea',
-          color: '#fff',
-          fontWeight: '600',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
+          width: '420px',
+          maxWidth: '100%',
+          padding: '32px',
+          borderRadius: '22px',
+          background: '#0f172a',
+          boxShadow: '0 12px 30px rgba(3,105,161,0.25)',
+          transition: '0.35s',
         }}
-        onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-        onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
       >
-        Learn More
-      </button>
+        <h3 style={{ color: '#06b6d4', marginBottom: '14px', fontSize: '1.5rem' }}>
+          {title}
+        </h3>
+
+        <p style={{ color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.8 }}>
+          {text}
+        </p>
+      </div>
+
+      <style>{`
+        .zig-card:hover {
+          transform: translateY(-10px) scale(1.04);
+          box-shadow: 0 24px 55px rgba(3,105,161,0.4);
+        }
+      `}</style>
     </div>
   );
 }

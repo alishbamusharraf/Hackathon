@@ -1,13 +1,18 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'An open-source book on modern robotics',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/robot_logo_v2.png',
+
+  // Client modules to inject chatbot globally
+  clientModules: [
+    require.resolve('./src/chatbotInjector.js'),
+  ],
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com', // Replace with final URL
@@ -51,7 +56,11 @@ const config = {
     ({
       navbar: {
         title: 'Physical AI & Humanoid Robotics',
-        
+        logo: {
+          alt: 'Physical AI Logo',
+          src: 'img/robot_logo_v2.png',
+        },
+
         items: [
           {
             type: 'docSidebar',

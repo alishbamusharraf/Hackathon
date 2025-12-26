@@ -11,6 +11,10 @@
           "mainDocId": "intro",
           "docs": [
             {
+              "id": "getting-started",
+              "path": "/docs/getting-started"
+            },
+            {
               "id": "intro",
               "path": "/docs/intro",
               "sidebar": "tutorialSidebar"

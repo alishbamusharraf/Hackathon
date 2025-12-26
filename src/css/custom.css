@@ -1,9 +1,41 @@
+/* Import Inter font for chatbot */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   background: #0b0f1a;
   color: #e0e0e0;
 }
+
+.navbar__logo {
+  height: 36px;
+}
+
+.navbar__logo img {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.themedComponent_mlkZ {
+  display: block !important;
+}
+
+
+
+
+/* Chatbot container should be above everything */
+#rag-chatbot-root {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+}
+
 
 /* HERO SECTION */
 .hero {
@@ -55,9 +87,17 @@ body {
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* FEATURES SECTION */
@@ -84,4 +124,17 @@ body {
   border-radius: 12px;
   border: 1px solid #00e5ff33;
   font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  #robot-animation {
+    width: 250px;
+    height: 250px;
+  }
 }

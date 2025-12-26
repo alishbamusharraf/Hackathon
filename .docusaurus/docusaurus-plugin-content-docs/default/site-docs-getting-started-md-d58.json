@@ -1,0 +1,19 @@
+{
+  "id": "getting-started",
+  "title": "Getting Started",
+  "description": "Welcome to the world of Physical AI and Humanoid Robotics 🤖",
+  "source": "@site/docs/getting-started.md",
+  "sourceDirName": ".",
+  "slug": "/getting-started",
+  "permalink": "/docs/getting-started",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/alishbamusharraf/Hackathon-/docs/getting-started.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Getting Started",
+    "sidebar_position": 2
+  }
+}

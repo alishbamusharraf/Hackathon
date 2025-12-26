@@ -39,16 +39,21 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '19e'),
+    component: ComponentCreator('/docs', '19a'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '22d'),
+        component: ComponentCreator('/docs', '7b5'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '45c'),
+            component: ComponentCreator('/docs', '2e4'),
             routes: [
+              {
+                path: '/docs/getting-started',
+                component: ComponentCreator('/docs/getting-started', 'eba'),
+                exact: true
+              },
               {
                 path: '/docs/intro',
                 component: ComponentCreator('/docs/intro', '61d'),

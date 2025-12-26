@@ -6,7 +6,10 @@
 export default {
   "title": "Physical AI & Humanoid Robotics",
   "tagline": "An open-source book on modern robotics",
-  "favicon": "img/favicon.ico",
+  "favicon": "img/robot_logo_v2.png",
+  "clientModules": [
+    "C:\\Hackathon-book-main\\src\\chatbotInjector.js"
+  ],
   "url": "https://your-docusaurus-test-site.com",
   "baseUrl": "/",
   "onBrokenLinks": "throw",
@@ -36,6 +39,10 @@ export default {
   "themeConfig": {
     "navbar": {
       "title": "Physical AI & Humanoid Robotics",
+      "logo": {
+        "alt": "Physical AI Logo",
+        "src": "img/robot_logo_v2.png"
+      },
       "items": [
         {
           "type": "docSidebar",
@@ -348,7 +355,6 @@ export default {
   "scripts": [],
   "headTags": [],
   "stylesheets": [],
-  "clientModules": [],
   "titleDelimiter": "|",
   "noIndex": false,
   "markdown": {

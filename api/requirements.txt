@@ -9,8 +9,6 @@ google-generativeai>=0.8.0
 # Vector database - Qdrant
 qdrant-client>=1.7.1
 
-# Embeddings
-sentence-transformers>=2.2.0
 
 # PostgreSQL
 asyncpg>=0.29.0

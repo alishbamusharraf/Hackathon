@@ -1,49 +1,32 @@
 """
-Embeddings service using sentence-transformers with all-MiniLM-L6-v2.
+Embeddings service using Google Generative AI (Gemini).
 Provides text embedding generation for RAG pipeline.
 """
 
 from typing import List, Union
-from sentence_transformers import SentenceTransformer
+import google.generativeai as genai
 import numpy as np
-from functools import lru_cache
+from config import settings
 
 
 class EmbeddingsService:
-    """Service for generating text embeddings using all-MiniLM-L6-v2."""
+    """Service for generating text embeddings using Google Gemini."""
     
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
+    def __init__(self, model_name: str = None):
         """
         Initialize the embeddings service.
         
         Args:
-            model_name: Name of the sentence-transformers model to use
+            model_name: Name of the Gemini embedding model to use
         """
-        self.model_name = model_name
-        self._model = None
-    
-    @property
-    def model(self) -> SentenceTransformer:
-        """Lazy load the model to save memory."""
-        if self._model is None:
-            print(f"Loading embedding model: {self.model_name}")
-            # FORCE OFFLINE MODE to prevent connection timeouts
-            import os
-            os.environ["HF_HUB_OFFLINE"] = "1"
-            try:
-                self._model = SentenceTransformer(self.model_name)
-            except Exception as e:
-                print(f"Failed to load model offline, trying online: {e}")
-                del os.environ["HF_HUB_OFFLINE"]
-                self._model = SentenceTransformer(self.model_name)
-                
-            print(f"Model loaded. Embedding dimension: {self.dimension}")
-        return self._model
+        self.model_name = model_name or settings.embedding_model
+        genai.configure(api_key=settings.gemini_api_key)
+        self._dimension = settings.embedding_dimension
     
     @property
     def dimension(self) -> int:
-        """Get the embedding dimension (384 for all-MiniLM-L6-v2)."""
-        return self.model.get_sentence_embedding_dimension()
+        """Get the embedding dimension (768 for text-embedding-004)."""
+        return self._dimension
     
     def embed_text(self, text: str) -> List[float]:
         """
@@ -55,8 +38,15 @@ class EmbeddingsService:
         Returns:
             List of floats representing the embedding vector
         """
-        embedding = self.model.encode(text, convert_to_numpy=True)
-        return embedding.tolist()
+        if not text.strip():
+            return [0.0] * self.dimension
+            
+        result = genai.embed_content(
+            model=self.model_name,
+            content=text,
+            task_type="retrieval_document"
+        )
+        return result['embedding']
     
     def embed_texts(self, texts: List[str], batch_size: int = 32) -> List[List[float]]:
         """
@@ -64,18 +54,23 @@ class EmbeddingsService:
         
         Args:
             texts: List of texts to embed
-            batch_size: Batch size for encoding
+            batch_size: Batch size (already optimized by Google API)
             
         Returns:
             List of embedding vectors
         """
-        embeddings = self.model.encode(
-            texts,
-            batch_size=batch_size,
-            convert_to_numpy=True,
-            show_progress_bar=True
+        if not texts:
+            return []
+            
+        # Clean text
+        cleaned_texts = [t if t.strip() else " " for t in texts]
+        
+        result = genai.embed_content(
+            model=self.model_name,
+            content=cleaned_texts,
+            task_type="retrieval_document"
         )
-        return embeddings.tolist()
+        return result['embeddings']
     
     def similarity(self, embedding1: List[float], embedding2: List[float]) -> float:
         """

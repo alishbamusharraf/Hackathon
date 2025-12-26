@@ -19,7 +19,8 @@ class Settings(BaseSettings):
     # Qdrant Cloud Configuration
     qdrant_url: str = Field(..., env="QDRANT_URL")
     qdrant_api_key: str = Field(..., env="QDRANT_API_KEY")
-    qdrant_collection_name: str = Field(default="book_content", env="QDRANT_COLLECTION")
+    qdrant_collection_name: str = Field(default="book_content_v2", env="QDRANT_COLLECTION")
+
     
     # Neon Postgres Configuration
     database_url: str = Field(..., env="DATABASE_URL")
@@ -33,10 +34,10 @@ class Settings(BaseSettings):
     
     # Embedding Settings
     embedding_model: str = Field(
-        default="all-MiniLM-L6-v2",
+        default="models/text-embedding-004",
         env="EMBEDDING_MODEL"
     )
-    embedding_dimension: int = Field(default=384)
+    embedding_dimension: int = Field(default=768)
     
     # Search Settings
     top_k_results: int = Field(default=5, env="TOP_K_RESULTS")

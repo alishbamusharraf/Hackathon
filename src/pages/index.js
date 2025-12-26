@@ -1,15 +1,19 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Layout from '@theme/Layout';
+import lottie from 'lottie-web';
+import robotData from '../assets/robot.json'; // apni robot JSON
 
 export default function Home() {
-
-  // Optional: Floating animation using CSS keyframes
   useEffect(() => {
-    const circles = document.querySelectorAll('.floating-circle');
-    circles.forEach((circle, index) => {
-      const delay = index * 1.5;
-      circle.style.animationDelay = `${delay}s`;
-    });
+    if (typeof window !== 'undefined') {
+      lottie.loadAnimation({
+        container: document.getElementById('robot-animation'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: robotData,
+      });
+    }
   }, []);
 
   return (
@@ -17,178 +21,129 @@ export default function Home() {
       title="Physical AI & Humanoid Robotics"
       description="Learn ROS 2, NVIDIA Isaac, Digital Twins & Vision-Language-Action systems"
     >
-      <main
-        style={{
+      <main style={{ fontFamily: "'Inter', sans-serif", minHeight: '100vh', overflowX: 'hidden' }}>
+        
+        {/* HERO SECTION */}
+        <section style={{
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'space-between', 
+          padding: '100px 10%', 
+          gap: '50px',
           position: 'relative',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '120px 20px',
-          textAlign: 'center',
-          background: 'linear-gradient(135deg, #e0f2ff 0%, #ffffff 100%)',
-          minHeight: '90vh',
-          overflow: 'hidden',
-          fontFamily: "'Inter', sans-serif",
-        }}
-      >
-        {/* Floating Circles */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-50px',
-            left: '-50px',
-            width: '300px',
-            height: '300px',
-            borderRadius: '50%',
-            background: 'rgba(79, 70, 229, 0.2)',
-            animation: 'float 10s ease-in-out infinite',
-          }}
-          className="floating-circle"
-        ></div>
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-80px',
-            right: '-80px',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-            background: 'rgba(99, 102, 241, 0.15)',
-            animation: 'float 15s ease-in-out infinite',
-          }}
-          className="floating-circle"
-        ></div>
-        <div
-          style={{
-            position: 'absolute',
-            top: '30%',
-            right: '10%',
-            width: '200px',
-            height: '200px',
-            borderRadius: '50%',
-            background: 'rgba(79, 70, 229, 0.1)',
-            animation: 'float 12s ease-in-out infinite',
-          }}
-          className="floating-circle"
-        ></div>
+          background: 'linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)',
+          overflow: 'hidden'
+        }}>
+          
+          {/* LEFT: Heading + Text + Buttons */}
+          <div style={{ flex: 1, textAlign: 'left', position: 'relative', zIndex: 1 }}>
+            <h1 style={{ fontSize: '3.5rem', fontWeight: '900', marginBottom: '20px', background: 'linear-gradient(90deg, #7c3aed, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+              Physical AI & <br /> Humanoid Robotics
+            </h1>
+            <p style={{ fontSize: '1.25rem', color: '#5b21b6', marginBottom: '40px', maxWidth: '500px' }}>
+              Step-by-step labs and examples covering ROS 2, NVIDIA Isaac, digital twins, and Vision-Language-Action systems.
+            </p>
 
-        {/* Hero Section */}
-        <h1
-          style={{
-            fontSize: '3rem',
-            fontWeight: '900',
-            marginBottom: '25px',
-            color: '#111827',
-            maxWidth: '900px',
-            lineHeight: '1.2',
-            animation: 'fadeInUp 1s ease forwards',
-            opacity: 0,
-          }}
-        >
-          <span style={{ background: 'linear-gradient(90deg, #6366f1, #4f46e5)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
-            Physical AI & Humanoid Robotics
-          </span>
-        </h1>
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+              <button className="primary-btn">📘 Read Book</button>
+              <button className="secondary-btn">🚀 Start Learning</button>
+            </div>
+          </div>
 
-        <p
-          style={{
-            fontSize: '1.25rem',
-            maxWidth: '750px',
-            color: '#4b5563',
-            marginBottom: '50px',
-            lineHeight: '1.7',
-            animation: 'fadeInUp 1.5s ease forwards',
-            opacity: 0,
-          }}
-        >
-          Step-by-step labs and examples covering ROS 2, digital twin simulation, NVIDIA Isaac, motor control, and Vision-Language-Action systems.
-        </p>
+          {/* RIGHT: Lottie Robot */}
+          <div style={{ flex: 1, textAlign: 'center', position: 'relative', zIndex: 1 }}>
+            <div id="robot-animation" style={{ width: '400px', height: '400px', margin: '0 auto' }} />
+          </div>
+        </section>
 
-        {/* Buttons */}
-        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', animation: 'fadeInUp 2s ease forwards', opacity: 0 }}>
-          <a
-            href="/docs/intro"
-            style={{
-              padding: '16px 32px',
-              backgroundColor: '#4f46e5',
-              color: 'white',
-              borderRadius: '12px',
-              textDecoration: 'none',
-              fontSize: '1.1rem',
-              fontWeight: '600',
-              boxShadow: '0 8px 24px rgba(79, 70, 229, 0.25)',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = 'scale(1.07)';
-              e.target.style.boxShadow = '0 12px 28px rgba(79, 70, 229, 0.35)';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = '0 8px 24px rgba(79, 70, 229, 0.25)';
-            }}
-          >
-            🚀 Start Learning
-          </a>
+        {/* WHAT YOU LEARN SECTION */}
+        <section style={{ padding: '80px 10%', textAlign: 'center', background: '#f3e8ff' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '50px', color: '#7c3aed' }}>What You'll Learn</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
+            <FeatureCard title="🤖 Humanoid Robots" description="Design and control lifelike humanoid robots." />
+            <FeatureCard title="🧠 Physical AI" description="Intelligent agents interacting with the real world." />
+            <FeatureCard title="⚙️ ROS 2" description="Robot Operating System for modern robotics." />
+            <FeatureCard title="🦾 Sensors & Actuators" description="Integrate sensors for perception and control." />
+          </div>
+        </section>
 
-          <a
-            href="https://github.com/alishbamusharraf/Hackathon"
-            target="_blank"
-            style={{
-              padding: '16px 32px',
-              border: '2px solid #4f46e5',
-              borderRadius: '12px',
-              color: '#4f46e5',
-              textDecoration: 'none',
-              fontSize: '1.1rem',
-              fontWeight: '600',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseOver={(e) => {
-              e.target.style.backgroundColor = '#eef2ff';
-              e.target.style.transform = 'scale(1.07)';
-              e.target.style.borderColor = '#6366f1';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.backgroundColor = 'transparent';
-              e.target.style.transform = 'scale(1)';
-              e.target.style.borderColor = '#4f46e5';
-            }}
-          >
-            ⭐ View on GitHub
-          </a>
-        </div>
+        {/* EXTRA SECTION */}
+        <section style={{ padding: '80px 10%', textAlign: 'center', background: '#ede9fe' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '30px', color: '#7c3aed' }}>Robotics in Action</h2>
+          <p style={{ fontSize: '1.2rem', color: '#5b21b6', marginBottom: '40px' }}>
+            Explore simulations and interactive examples to see humanoid robotics in real-world scenarios.
+          </p>
+          <button className="primary-btn">Try Simulation</button>
+        </section>
 
-        {/* Footer */}
-        <p
-          style={{
-            marginTop: '70px',
-            color: '#6b7280',
-            fontSize: '1rem',
-            maxWidth: '700px',
-            lineHeight: '1.6',
-            animation: 'fadeInUp 2.5s ease forwards',
-            opacity: 0,
-          }}
-        >
-          Use the sidebar to explore each module and build your robotics journey.
-        </p>
-
-        {/* Keyframes */}
+        {/* GLOBAL STYLES */}
         <style>{`
-          @keyframes float {
-            0% { transform: translateY(0px) translateX(0px); }
-            50% { transform: translateY(-20px) translateX(15px); }
-            100% { transform: translateY(0px) translateX(0px); }
+          .primary-btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: #7c3aed;
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
           }
+          .primary-btn:hover { transform: scale(1.07); box-shadow: 0 8px 24px rgba(124,58,237,0.35); }
 
-          @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+          .secondary-btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: transparent;
+            color: #7c3aed;
+            border: 2px solid #7c3aed;
+            transition: all 0.3s ease;
           }
+          .secondary-btn:hover { background-color: #ede9fe; transform: scale(1.07); border-color: #9333ea; }
         `}</style>
       </main>
     </Layout>
+  );
+}
+
+function FeatureCard({ title, description }) {
+  return (
+    <div
+      style={{
+        padding: '25px',
+        borderRadius: '12px',
+        backgroundColor: '#faf5ff',
+        fontWeight: '600',
+        fontSize: '1.1rem',
+        textAlign: 'center',
+        boxShadow: '0 6px 18px rgba(124,58,237,0.15)',
+        transition: 'all 0.3s ease',
+        cursor: 'pointer',
+      }}
+      onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.boxShadow = '0 12px 25px rgba(124,58,237,0.25)'; }}
+      onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 18px rgba(124,58,237,0.15)'; }}
+    >
+      <h3 style={{ fontSize: '1.4rem', marginBottom: '12px', color: '#7c3aed' }}>{title}</h3>
+      <p style={{ fontSize: '1rem', color: '#5b21b6', marginBottom: '15px' }}>{description}</p>
+      <button
+        style={{
+          padding: '8px 20px',
+          borderRadius: '10px',
+          border: 'none',
+          backgroundColor: '#9333ea',
+          color: '#fff',
+          fontWeight: '600',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+        }}
+        onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+        onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+      >
+        Learn More
+      </button>
+    </div>
   );
 }

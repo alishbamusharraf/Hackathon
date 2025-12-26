@@ -9,7 +9,7 @@ import ChatModal from './ChatModal';
 import styles from './styles.module.css';
 
 // API URL - change this when deploying to production
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = typeof window !== 'undefined' ? window.location.origin : '';
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);

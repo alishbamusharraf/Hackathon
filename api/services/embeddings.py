@@ -28,12 +28,13 @@ class EmbeddingsService:
         """Get the embedding dimension (768 for text-embedding-004)."""
         return self._dimension
     
-    def embed_text(self, text: str) -> List[float]:
+    def embed_text(self, text: str, task_type: str = "retrieval_document") -> List[float]:
         """
         Generate embedding for a single text.
         
         Args:
             text: Text to embed
+            task_type: Type of task (retrieval_document or retrieval_query)
             
         Returns:
             List of floats representing the embedding vector
@@ -44,17 +45,17 @@ class EmbeddingsService:
         result = genai.embed_content(
             model=self.model_name,
             content=text,
-            task_type="retrieval_document"
+            task_type=task_type
         )
         return result['embedding']
     
-    def embed_texts(self, texts: List[str], batch_size: int = 32) -> List[List[float]]:
+    def embed_texts(self, texts: List[str], task_type: str = "retrieval_document") -> List[List[float]]:
         """
         Generate embeddings for multiple texts.
         
         Args:
             texts: List of texts to embed
-            batch_size: Batch size (already optimized by Google API)
+            task_type: Type of task (retrieval_document or retrieval_query)
             
         Returns:
             List of embedding vectors
@@ -68,9 +69,10 @@ class EmbeddingsService:
         result = genai.embed_content(
             model=self.model_name,
             content=cleaned_texts,
-            task_type="retrieval_document"
+            task_type=task_type
         )
         return result['embeddings']
+
     
     def similarity(self, embedding1: List[float], embedding2: List[float]) -> float:
         """

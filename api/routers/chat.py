@@ -73,7 +73,7 @@ async def chat(request: ChatRequest):
             search_query = f"{request.message} Context: {request.selected_text[:500]}"
         
         
-        query_embedding = embeddings_service.embed_text(search_query)
+        query_embedding = embeddings_service.embed_text(search_query, task_type="retrieval_query")
         print("Query embedding generated")
 
         
@@ -164,7 +164,7 @@ async def chat_stream(request: ChatRequest):
             search_query = f"{request.message} Context: {request.selected_text[:500]}"
             
         t2 = time.time()
-        query_embedding = embeddings_service.embed_text(search_query)
+        query_embedding = embeddings_service.embed_text(search_query, task_type="retrieval_query")
         print(f"[{time.time() - t2:.3f}s] Embedding generation")
 
         # Search for relevant context (Network operation - Qdrant)
@@ -251,7 +251,7 @@ async def search(request: SearchRequest):
         qdrant_service = get_qdrant_service()
         
         # Generate query embedding
-        query_embedding = embeddings_service.embed_text(request.query)
+        query_embedding = embeddings_service.embed_text(request.query, task_type="retrieval_query")
         
         # Search
         results = await qdrant_service.search(

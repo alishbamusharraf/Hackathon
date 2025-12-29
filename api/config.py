@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     
     # Application Settings
     cors_origins: str = Field(
-        default="http://localhost:3000,http://localhost:3001",
+        default="http://localhost:3000,http://localhost:3001,http://127.0.0.1:3000,http://127.0.0.1:3001",
         env="CORS_ORIGINS"
     )
     debug: bool = Field(default=False, env="DEBUG")

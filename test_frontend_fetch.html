@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Chat Stream</title>
+</head>
+<body>
+    <h1>Testing Chat Stream Connection</h1>
+    <button onclick="testChatStream()">Test Chat Stream</button>
+    <div id="output"></div>
+
+    <script>
+        async function testChatStream() {
+            const output = document.getElementById('output');
+            output.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/chat/stream', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: 'Hello, test message',
+                        session_id: 'test_session_' + Date.now()
+                    }),
+                });
+
+                output.innerHTML += '<br>Status: ' + response.status;
+                
+                if (!response.ok) {
+                    output.innerHTML += '<br>Error: ' + response.statusText;
+                    return;
+                }
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                
+                output.innerHTML += '<br>Reading stream...';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    const chunk = decoder.decode(value);
+                    output.innerHTML += '<br>' + chunk;
+                }
+                
+                output.innerHTML += '<br>✅ Stream completed successfully!';
+            } catch (error) {
+                output.innerHTML += '<br>❌ Error: ' + error.message;
+                console.error('Chat stream error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

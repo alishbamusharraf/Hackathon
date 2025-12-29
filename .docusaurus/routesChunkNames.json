@@ -42,6 +42,20 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
+  "/login-a8c": {
+    "__comp": "__comp---site-src-pages-login-js-380-710",
+    "__context": {
+      "plugin": "plugin---logina-74-fc3"
+    },
+    "config": "config---login-5-e-9-d49"
+  },
+  "/signup-e02": {
+    "__comp": "__comp---site-src-pages-signup-js-83-a-147",
+    "__context": {
+      "plugin": "plugin---logina-74-fc3"
+    },
+    "config": "config---login-5-e-9-d49"
+  },
   "/docs-19a": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
@@ -122,8 +136,8 @@
   "/-2e1": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "plugin---a-74-9d6"
+      "plugin": "plugin---logina-74-fc3"
     },
-    "config": "config---5-e-9-4f3"
+    "config": "config---login-5-e-9-d49"
   }
 }

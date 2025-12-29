@@ -16,7 +16,8 @@ export default {
   "i18n": {
     "defaultLocale": "en",
     "locales": [
-      "en"
+      "en",
+      "ur"
     ],
     "path": "i18n",
     "localeConfigs": {}
@@ -49,6 +50,22 @@ export default {
           "sidebarId": "tutorialSidebar",
           "position": "left",
           "label": "Book"
+        },
+        {
+          "to": "/login",
+          "label": "Login",
+          "position": "right"
+        },
+        {
+          "to": "/signup",
+          "label": "Sign Up",
+          "position": "right"
+        },
+        {
+          "type": "localeDropdown",
+          "position": "right",
+          "dropdownItemsBefore": [],
+          "dropdownItemsAfter": []
         },
         {
           "href": "https://github.com/alishbamusharraf/Hackathon-",
@@ -93,7 +110,7 @@ export default {
           ]
         }
       ],
-      "copyright": "Copyright © 2025 Physical AI & Humanoid Robotics, Inc. Built with Docusaurus."
+      "copyright": "Copyright © 2025 Physical AI & Humanoid Robotics. Built with Docusaurus."
     },
     "prism": {
       "theme": {

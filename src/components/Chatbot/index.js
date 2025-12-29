@@ -9,7 +9,9 @@ import ChatModal from './ChatModal';
 import styles from './styles.module.css';
 
 // API URL - change this when deploying to production
-const API_BASE_URL = typeof window !== 'undefined' ? window.location.origin : '';
+const API_BASE_URL = typeof window !== 'undefined'
+    ? (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:8000' : window.location.origin)
+    : '';
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -121,7 +123,11 @@ export default function Chatbot() {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`${API_BASE_URL}/api/chat/stream`, {
+            const apiUrl = `${API_BASE_URL}/api/chat/stream`;
+            console.log('Sending message to:', apiUrl);
+            console.log('API_BASE_URL:', API_BASE_URL);
+
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -133,8 +139,13 @@ export default function Chatbot() {
                 }),
             });
 
+            console.log('Response status:', response.status);
+            console.log('Response ok:', response.ok);
+
             if (!response.ok) {
-                throw new Error('Failed to get response');
+                const errorText = await response.text();
+                console.error('Response error:', errorText);
+                throw new Error(`Failed to get response: ${response.status} ${errorText}`);
             }
 
             const reader = response.body.getReader();
@@ -199,9 +210,14 @@ export default function Chatbot() {
             }
         } catch (error) {
             console.error('Chat stream error:', error);
+            console.error('Error name:', error.name);
+            console.error('Error message:', error.message);
+            console.error('Error stack:', error.stack);
+            console.error('API_BASE_URL was:', API_BASE_URL);
+            
             const errorMessage = {
                 role: 'assistant',
-                content: "I'm sorry, I encountered an error. Please try again.",
+                content: `I'm sorry, I encountered an error: ${error.message}. Please make sure the backend is running on port 8000.`,
                 isError: true,
                 timestamp: new Date().toISOString(),
             };

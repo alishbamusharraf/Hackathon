@@ -38,6 +38,16 @@ export default [
     exact: true
   },
   {
+    path: '/login',
+    component: ComponentCreator('/login', 'a8c'),
+    exact: true
+  },
+  {
+    path: '/signup',
+    component: ComponentCreator('/signup', 'e02'),
+    exact: true
+  },
+  {
     path: '/docs',
     component: ComponentCreator('/docs', '19a'),
     routes: [

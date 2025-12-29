@@ -5,7 +5,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 docusaurus build",
+    "build:vercel": "cross-env NODE_OPTIONS=--max-old-space-size=2560 docusaurus build --out-dir build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear"
@@ -22,7 +23,10 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.0.0",
-    "@docusaurus/types": "^3.0.0"
+    "@docusaurus/types": "^3.0.0",
+    "@swc/core": "^1.15.7",
+    "cross-env": "^10.1.0",
+    "swc-loader": "^0.2.6"
   },
   "browserslist": {
     "production": [

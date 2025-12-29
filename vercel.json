@@ -1,9 +1,28 @@
 {
     "version": 2,
+    "buildCommand": "npm run build:vercel",
+    "outputDirectory": "build",
+    "installCommand": "npm install --legacy-peer-deps",
+    "framework": null,
     "rewrites": [
         {
             "source": "/api/(.*)",
             "destination": "api/main.py"
         }
-    ]
+    ],
+    "functions": {
+        "api/**/*.py": {
+            "runtime": "python3.9",
+            "maxDuration": 30
+        }
+    },
+    "env": {
+        "NODE_OPTIONS": "--max-old-space-size=2560"
+    },
+    "build": {
+        "env": {
+            "NODE_OPTIONS": "--max-old-space-size=2560",
+            "DOCUSAURUS_SSR_CONCURRENCY": "2"
+        }
+    }
 }

@@ -11,7 +11,7 @@ export default {
     "C:\\Hackathon-book-main\\src\\chatbotInjector.js"
   ],
   "url": "https://your-docusaurus-test-site.com",
-  "baseUrl": "/",
+  "baseUrl": "/ur/",
   "onBrokenLinks": "throw",
   "i18n": {
     "defaultLocale": "en",

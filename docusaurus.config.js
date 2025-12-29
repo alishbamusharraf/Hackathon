@@ -23,7 +23,7 @@ const config = {
   // 🌍 Language config (English)
   i18n: {
     defaultLocale: 'en',
-    locales: ['en','ur'],
+    locales: ['en', 'ur'],
   },
 
   presets: [
@@ -41,6 +41,9 @@ const config = {
       }),
     ],
   ],
+
+  // Optimize for Vercel memory constraints
+
 
   themeConfig:
     ({

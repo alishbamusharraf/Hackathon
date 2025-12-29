@@ -1,96 +1,96 @@
 {
-  "/ur/login-49a": {
+  "/login-a8c": {
     "__comp": "380abe66",
     "__context": {
       "plugin": "a7456010"
     },
     "config": "5e9f5e1a"
   },
-  "/ur/signup-699": {
+  "/signup-e02": {
     "__comp": "83ac7242",
     "__context": {
       "plugin": "a7456010"
     },
     "config": "5e9f5e1a"
   },
-  "/ur/docs-56e": {
+  "/docs-19a": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/ur/docs-344": {
+  "/docs-7b5": {
     "__comp": "a7bd4aaa",
-    "__props": "04f2558c"
+    "__props": "0058b4c6"
   },
-  "/ur/docs-a0c": {
+  "/docs-2e4": {
     "__comp": "a94703ab"
   },
-  "/ur/docs/getting-started-e8a": {
+  "/docs/getting-started-eba": {
     "__comp": "17896441",
     "content": "d589d3a7"
   },
-  "/ur/docs/intro-8a7": {
+  "/docs/intro-61d": {
     "__comp": "17896441",
-    "content": "9e1a014e"
+    "content": "0e384e19"
   },
-  "/ur/docs/module-1/chapter-1-core-concepts-125": {
+  "/docs/module-1/chapter-1-core-concepts-983": {
     "__comp": "17896441",
     "content": "daffc9be"
   },
-  "/ur/docs/module-1/chapter-2-rclpy-control-966": {
+  "/docs/module-1/chapter-2-rclpy-control-9e3": {
     "__comp": "17896441",
     "content": "14066dc9"
   },
-  "/ur/docs/module-1/chapter-3-urdf-fundamentals-31e": {
+  "/docs/module-1/chapter-3-urdf-fundamentals-1c9": {
     "__comp": "17896441",
     "content": "6c78093e"
   },
-  "/ur/docs/module-1/chapter-4-joint-control-project-de7": {
+  "/docs/module-1/chapter-4-joint-control-project-492": {
     "__comp": "17896441",
     "content": "123d6eb0"
   },
-  "/ur/docs/module-2/chapter-1-gazebo-physics-b59": {
+  "/docs/module-2/chapter-1-gazebo-physics-d9d": {
     "__comp": "17896441",
     "content": "10353681"
   },
-  "/ur/docs/module-2/chapter-2-unity-digital-twin-f27": {
+  "/docs/module-2/chapter-2-unity-digital-twin-ed6": {
     "__comp": "17896441",
     "content": "2507a4d9"
   },
-  "/ur/docs/module-2/chapter-3-sensor-simulation-5ca": {
+  "/docs/module-2/chapter-3-sensor-simulation-7b2": {
     "__comp": "17896441",
     "content": "acf56a6c"
   },
-  "/ur/docs/module-3-isaac/chapter-1-isaac-sim-fundamentals-07b": {
+  "/docs/module-3-isaac/chapter-1-isaac-sim-fundamentals-83a": {
     "__comp": "17896441",
     "content": "83985cb3"
   },
-  "/ur/docs/module-3-isaac/chapter-2-isaac-ros-vslam-perception-613": {
+  "/docs/module-3-isaac/chapter-2-isaac-ros-vslam-perception-884": {
     "__comp": "17896441",
     "content": "a5baf50b"
   },
-  "/ur/docs/module-3-isaac/chapter-3-nav2-humanoid-planning-335": {
+  "/docs/module-3-isaac/chapter-3-nav2-humanoid-planning-25c": {
     "__comp": "17896441",
     "content": "f6f4a9d9"
   },
-  "/ur/docs/module-3-isaac/chapter-4-isaac-sim-ros-workflow-8cb": {
+  "/docs/module-3-isaac/chapter-4-isaac-sim-ros-workflow-491": {
     "__comp": "17896441",
     "content": "e97402ad"
   },
-  "/ur/docs/module-4-vla/chapter-1-voice-to-action-47c": {
+  "/docs/module-4-vla/chapter-1-voice-to-action-c97": {
     "__comp": "17896441",
     "content": "4c700768"
   },
-  "/ur/docs/module-4-vla/chapter-2-cognitive-planning-7e8": {
+  "/docs/module-4-vla/chapter-2-cognitive-planning-649": {
     "__comp": "17896441",
     "content": "d19a0b40"
   },
-  "/ur/docs/module-4-vla/chapter-3-capstone-overview-153": {
+  "/docs/module-4-vla/chapter-3-capstone-overview-692": {
     "__comp": "17896441",
     "content": "8cfc7004"
   },
-  "/ur/-3b1": {
+  "/-2e1": {
     "__comp": "c4f5d8e4",
     "__context": {
       "plugin": "a7456010"

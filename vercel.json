@@ -16,12 +16,15 @@
         }
     },
     "env": {
-        "NODE_OPTIONS": "--max-old-space-size=2560"
+        "NODE_OPTIONS": "--max-old-space-size=2048",
+        "GENERATE_SOURCEMAP": "false",
+        "DOCUSAURUS_SSR_CONCURRENCY": "1"
     },
     "build": {
         "env": {
-            "NODE_OPTIONS": "--max-old-space-size=2560",
-            "DOCUSAURUS_SSR_CONCURRENCY": "2"
+            "NODE_OPTIONS": "--max-old-space-size=2048",
+            "GENERATE_SOURCEMAP": "false",
+            "DOCUSAURUS_SSR_CONCURRENCY": "1"
         }
     }
 }

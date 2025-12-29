@@ -3,118 +3,118 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/ur/login',
-    component: ComponentCreator('/ur/login', '49a'),
+    path: '/login',
+    component: ComponentCreator('/login', 'a8c'),
     exact: true
   },
   {
-    path: '/ur/signup',
-    component: ComponentCreator('/ur/signup', '699'),
+    path: '/signup',
+    component: ComponentCreator('/signup', 'e02'),
     exact: true
   },
   {
-    path: '/ur/docs',
-    component: ComponentCreator('/ur/docs', '56e'),
+    path: '/docs',
+    component: ComponentCreator('/docs', '19a'),
     routes: [
       {
-        path: '/ur/docs',
-        component: ComponentCreator('/ur/docs', '344'),
+        path: '/docs',
+        component: ComponentCreator('/docs', '7b5'),
         routes: [
           {
-            path: '/ur/docs',
-            component: ComponentCreator('/ur/docs', 'a0c'),
+            path: '/docs',
+            component: ComponentCreator('/docs', '2e4'),
             routes: [
               {
-                path: '/ur/docs/getting-started',
-                component: ComponentCreator('/ur/docs/getting-started', 'e8a'),
+                path: '/docs/getting-started',
+                component: ComponentCreator('/docs/getting-started', 'eba'),
                 exact: true
               },
               {
-                path: '/ur/docs/intro',
-                component: ComponentCreator('/ur/docs/intro', '8a7'),
+                path: '/docs/intro',
+                component: ComponentCreator('/docs/intro', '61d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-1/chapter-1-core-concepts',
-                component: ComponentCreator('/ur/docs/module-1/chapter-1-core-concepts', '125'),
+                path: '/docs/module-1/chapter-1-core-concepts',
+                component: ComponentCreator('/docs/module-1/chapter-1-core-concepts', '983'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-1/chapter-2-rclpy-control',
-                component: ComponentCreator('/ur/docs/module-1/chapter-2-rclpy-control', '966'),
+                path: '/docs/module-1/chapter-2-rclpy-control',
+                component: ComponentCreator('/docs/module-1/chapter-2-rclpy-control', '9e3'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-1/chapter-3-urdf-fundamentals',
-                component: ComponentCreator('/ur/docs/module-1/chapter-3-urdf-fundamentals', '31e'),
+                path: '/docs/module-1/chapter-3-urdf-fundamentals',
+                component: ComponentCreator('/docs/module-1/chapter-3-urdf-fundamentals', '1c9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-1/chapter-4-joint-control-project',
-                component: ComponentCreator('/ur/docs/module-1/chapter-4-joint-control-project', 'de7'),
+                path: '/docs/module-1/chapter-4-joint-control-project',
+                component: ComponentCreator('/docs/module-1/chapter-4-joint-control-project', '492'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-2/chapter-1-gazebo-physics',
-                component: ComponentCreator('/ur/docs/module-2/chapter-1-gazebo-physics', 'b59'),
+                path: '/docs/module-2/chapter-1-gazebo-physics',
+                component: ComponentCreator('/docs/module-2/chapter-1-gazebo-physics', 'd9d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-2/chapter-2-unity-digital-twin',
-                component: ComponentCreator('/ur/docs/module-2/chapter-2-unity-digital-twin', 'f27'),
+                path: '/docs/module-2/chapter-2-unity-digital-twin',
+                component: ComponentCreator('/docs/module-2/chapter-2-unity-digital-twin', 'ed6'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-2/chapter-3-sensor-simulation',
-                component: ComponentCreator('/ur/docs/module-2/chapter-3-sensor-simulation', '5ca'),
+                path: '/docs/module-2/chapter-3-sensor-simulation',
+                component: ComponentCreator('/docs/module-2/chapter-3-sensor-simulation', '7b2'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-3-isaac/chapter-1-isaac-sim-fundamentals',
-                component: ComponentCreator('/ur/docs/module-3-isaac/chapter-1-isaac-sim-fundamentals', '07b'),
+                path: '/docs/module-3-isaac/chapter-1-isaac-sim-fundamentals',
+                component: ComponentCreator('/docs/module-3-isaac/chapter-1-isaac-sim-fundamentals', '83a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-3-isaac/chapter-2-isaac-ros-vslam-perception',
-                component: ComponentCreator('/ur/docs/module-3-isaac/chapter-2-isaac-ros-vslam-perception', '613'),
+                path: '/docs/module-3-isaac/chapter-2-isaac-ros-vslam-perception',
+                component: ComponentCreator('/docs/module-3-isaac/chapter-2-isaac-ros-vslam-perception', '884'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-3-isaac/chapter-3-nav2-humanoid-planning',
-                component: ComponentCreator('/ur/docs/module-3-isaac/chapter-3-nav2-humanoid-planning', '335'),
+                path: '/docs/module-3-isaac/chapter-3-nav2-humanoid-planning',
+                component: ComponentCreator('/docs/module-3-isaac/chapter-3-nav2-humanoid-planning', '25c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-3-isaac/chapter-4-isaac-sim-ros-workflow',
-                component: ComponentCreator('/ur/docs/module-3-isaac/chapter-4-isaac-sim-ros-workflow', '8cb'),
+                path: '/docs/module-3-isaac/chapter-4-isaac-sim-ros-workflow',
+                component: ComponentCreator('/docs/module-3-isaac/chapter-4-isaac-sim-ros-workflow', '491'),
                 exact: true
               },
               {
-                path: '/ur/docs/module-4-vla/chapter-1-voice-to-action',
-                component: ComponentCreator('/ur/docs/module-4-vla/chapter-1-voice-to-action', '47c'),
+                path: '/docs/module-4-vla/chapter-1-voice-to-action',
+                component: ComponentCreator('/docs/module-4-vla/chapter-1-voice-to-action', 'c97'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-4-vla/chapter-2-cognitive-planning',
-                component: ComponentCreator('/ur/docs/module-4-vla/chapter-2-cognitive-planning', '7e8'),
+                path: '/docs/module-4-vla/chapter-2-cognitive-planning',
+                component: ComponentCreator('/docs/module-4-vla/chapter-2-cognitive-planning', '649'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/ur/docs/module-4-vla/chapter-3-capstone-overview',
-                component: ComponentCreator('/ur/docs/module-4-vla/chapter-3-capstone-overview', '153'),
+                path: '/docs/module-4-vla/chapter-3-capstone-overview',
+                component: ComponentCreator('/docs/module-4-vla/chapter-3-capstone-overview', '692'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }
@@ -125,8 +125,8 @@ export default [
     ]
   },
   {
-    path: '/ur/',
-    component: ComponentCreator('/ur/', '3b1'),
+    path: '/',
+    component: ComponentCreator('/', '2e1'),
     exact: true
   },
   {

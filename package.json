@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 docusaurus build",
-    "build:vercel": "cross-env NODE_OPTIONS=--max-old-space-size=2560 docusaurus build --out-dir build",
+    "build:vercel": "cross-env NODE_OPTIONS=--max-old-space-size=2048 GENERATE_SOURCEMAP=false DOCUSAURUS_SSR_CONCURRENCY=1 docusaurus build --out-dir build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear"

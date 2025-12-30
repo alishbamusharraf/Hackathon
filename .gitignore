@@ -12,6 +12,7 @@ Thumbs.db
 
 # Node.js / Docusaurus
 node_modules/
+.docusaurus/
 dist/
 build/
 *.log

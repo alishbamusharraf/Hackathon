@@ -33,6 +33,7 @@ lerna-debug.log*
 *~
 
 # Python
+api/
 api/.venv
 api/__pycache__
 api/*.pyc
